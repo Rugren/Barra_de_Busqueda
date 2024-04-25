@@ -16,11 +16,15 @@ import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpClient, provideHttpClient } from '@angular/common/http';
 
+/* Angular Pipes */
+import { FilterPipe } from './pipes/filter.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent
+    SearchComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -20,8 +20,11 @@ export class AppComponent implements OnInit {
   // title = 'Search';
 
   handleSearch(value: string) {
-    console.log(value);
+    console.log(value); // para ver por consola todo lo que escribimos
+    this.filtro_valor = value
   }
+
+  filtro_valor = ''
 
   constructor(
     private _http: HttpClient

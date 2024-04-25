@@ -1,4 +1,7 @@
 <mat-form-field class="mat-form-field">
-    <input [formControl]="search" matInput placeholder="Búsqueda">
+    <!-- spellcheck="false" es para que no muestre en rojo las faltas de ortografía -->
+    <!-- autocomplete="none" es para que no se autocomplete (para la seguridad, como en formularios de datos sensibles; tarjetas de crédito, etc.) 
+        Aun Así, con autocomplete="on" tampoco lo realiza -->
+    <input [formControl]="search" spellcheck="false" autocomplete="on" matInput placeholder="Búsqueda">
 </mat-form-field>
 
