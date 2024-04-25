@@ -1,10 +1,19 @@
+/* Cosas internas de Angular */
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+
+/* App Component */
 import { AppComponent } from './components/app/app.component';
 import { SearchComponent } from './components/search/search.component';
+
+/* Angular Material */
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +22,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     provideClientHydration(),
