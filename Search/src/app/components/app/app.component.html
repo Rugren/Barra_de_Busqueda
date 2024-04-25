@@ -1,1 +1,18 @@
 <app-search (search)="handleSearch($event)"></app-search>
+
+<!-- Cogidos de https://jsonplaceholder.typicode.com/users 
+Para importarlos hay que importar el HttpClientModule en el app.module.ts -->
+<h3>Nombres:</h3>
+<ul>
+  <li *ngFor="let usuario of usuarios">{{ usuario.name }}</li>
+</ul>
+
+<h3>Usuario:</h3>
+<ul>
+  <li *ngFor="let usuario of usuarios">{{ usuario.username }}</li>
+</ul>
+
+<h3>Teléfono:</h3>
+<ul>
+  <li *ngFor="let usuario of usuarios">{{ usuario.phone }}</li>
+</ul>
