@@ -16,7 +16,8 @@ export class SearchComponent implements OnInit {
     })
   }
 
-  search = new FormControl('')
+  // search = new FormControl('') // Así no va.
+  search = new FormControl()
 
   @Output('search') searchEmitter = new EventEmitter<string>()
 
