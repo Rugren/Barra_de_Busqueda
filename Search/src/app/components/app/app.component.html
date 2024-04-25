@@ -1,3 +1,4 @@
+<h1>Búsqueda por Nombre:</h1>
 <app-search (search)="handleSearch($event)"></app-search>
 
 <!-- Cogidos de https://jsonplaceholder.typicode.com/users 
@@ -7,13 +8,15 @@ Para importarlos hay que importar el HttpClientModule en el app.module.ts -->
   <li *ngFor="let usuario of usuarios | filter:filtro_valor ">{{ usuario.name }}</li>
 </ul>
 
-<!-- 
 <h3>Usuario:</h3>
 <ul>
-  <li *ngFor="let usuario of usuarios">{{ usuario.username }}</li>
+  <li *ngFor="let usuario of usuarios | filter:filtro_valor ">{{ usuario.username }}</li>
 </ul>
 
 <h3>Teléfono:</h3>
 <ul>
-  <li *ngFor="let usuario of usuarios">{{ usuario.phone }}</li>
-</ul> -->
+  <li *ngFor="let usuario of usuarios | filter:filtro_valor ">{{ usuario.phone }}</li>
+</ul> 
+
+
+<!-- <app-search (search)="handleSearch($event)"></app-search> -->
