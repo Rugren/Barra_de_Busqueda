@@ -26,14 +26,13 @@ export class AppComponent implements OnInit {
 
   filtro_valor = ''
 
-  // LO NUEVO QUE HICE
+  // No necesario hacer otro para buscar por usuarios, hecho en el mismo handleSearch
   /* handleSearchUsuario(value: string) {
     console.log(value); // para ver por consola todo lo que escribimos
     this.filtroUsuario = value
   }
 
   filtroUsuario = '' */
-  // FIN DE LO QUE HICE NUEVO 
 
   constructor(
     private _http: HttpClient
@@ -48,9 +47,10 @@ export class AppComponent implements OnInit {
   /* Así como lo tenía bien (pero hecho más abajo los 2 juntos)
   ngOnInit() {
     this._http.get<Usuario[]>('https://jsonplaceholder.typicode.com/users').subscribe(
-      (users: Usuario[]) => this.usuarios = users);
+      (users: Usuario[]) => this.usuarios = users); */
 
-      // NUEVO hecho en otro apartado (no comprobado que funcione)
+  /*
+      // Aquí hecho en otro apartado (no comprobado que funcione)
       this._http.get<Usuario[]>('https://jsonplaceholder.typicode.com/users').subscribe(
         (users: Usuario[]) => this.username = users);
   } */
@@ -67,7 +67,9 @@ export class AppComponent implements OnInit {
   // usuarios = []
   usuarios: Usuario[] = [];
 
-  // NUEVO 26/04
   username: Usuario[] = [];
   // username: Usuario[] | undefined;
+
+  
+
 }
