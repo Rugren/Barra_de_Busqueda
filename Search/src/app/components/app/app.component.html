@@ -18,5 +18,43 @@ Para importarlos hay que importar el HttpClientModule en el app.module.ts -->
   <li *ngFor="let usuario of usuarios | filter:filtro_valor ">{{ usuario.phone }}</li>
 </ul> 
 
+<!-- SOLUCIONAR que se pueda buscar por usuario -->
+<!-- <h1>Búsqueda por Usuario:</h1>
+<app-search (search)="handleSearchUsuario($event)"></app-search> 
+<h3>Nombres:</h3>
+<ul>
+  <li *ngFor="let usuario of usuarios | filterUsuario:filtroUsuario ">{{ usuario.name }}</li>
+</ul>
 
-<!-- <app-search (search)="handleSearch($event)"></app-search> -->
+<h3>Usuario:</h3>
+<ul>
+  <li *ngFor="let usuario of usuarios | filterUsuario:filtroUsuario ">{{ usuario.username }}</li>
+</ul>
+
+<h3>Teléfono:</h3>
+<ul>
+  <li *ngFor="let usuario of usuarios | filterUsuario:filtroUsuario ">{{ usuario.phone }}</li>
+  <! -- <li *ngFor="let usuario of username | filterUsuario:filtroUsuario ">{{ usuario.phone }}</li> -- >
+</ul>
+-->
+
+<!-- nuevo 26/04 10:42 -->
+<h1>Búsqueda por Usuario:</h1>
+<app-search (search)="handleSearch($event)"></app-search> 
+<h3>Nombres:</h3>
+<ul>
+  <li *ngFor="let usuario of usuarios | filterUsuario:filtro_valor ">{{ usuario.name }}</li>
+</ul>
+
+<h3>Usuario:</h3>
+<ul>
+  <li *ngFor="let usuario of usuarios | filterUsuario:filtro_valor ">{{ usuario.username }}</li>
+</ul>
+
+<h3>Teléfono:</h3>
+<ul>
+  <li *ngFor="let usuario of usuarios | filterUsuario:filtro_valor ">{{ usuario.phone }}</li>
+</ul> 
+
+<!-- CREAR UNA búsqueda por teléfono -->
+

@@ -18,13 +18,15 @@ import { HttpClientModule, HttpClient, provideHttpClient } from '@angular/common
 
 /* Angular Pipes */
 import { FilterPipe } from './pipes/filter.pipe';
+import { FilterUsuarioPipe } from './pipes/filter-usuario.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    FilterPipe
+    FilterPipe,
+    FilterUsuarioPipe
   ],
   imports: [
     BrowserModule,
