@@ -60,6 +60,9 @@ export class AppComponent implements OnInit {
       (users: Usuario[]) => {
         this.usuarios = users;
         this.username = users; // No se necesitan dos arreglos separados, se puede usar usuarios para ambos propósitos de búsqueda
+        this.phone = users;
+        // this.email = users;
+        // this.website = users;
       }
     );
   }
@@ -70,6 +73,6 @@ export class AppComponent implements OnInit {
   username: Usuario[] = [];
   // username: Usuario[] | undefined;
 
-  
+  phone: Usuario[] = [];
 
 }

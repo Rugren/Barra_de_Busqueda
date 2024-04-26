@@ -45,6 +45,23 @@ Para importarlos hay que importar el HttpClientModule en el app.module.ts -->
   <hr>
   <br>
 
-  
+<h1>Búsqueda por Teléfono:</h1>
+<app-search (search)="handleSearch($event)"></app-search> 
+
+<h3>Teléfono:</h3>
+<ul>
+  <li *ngFor="let usuario of username | filterTelefono:filtro_valor ">{{ usuario.phone }}</li>
+</ul> 
+
+<h3>Nombres:</h3>
+<ul>
+  <li *ngFor="let usuario of username | filterTelefono:filtro_valor ">{{ usuario.name }}</li>
+</ul>
+
+<h3>Usuario:</h3>
+<ul>
+  <li *ngFor="let usuario of username | filterTelefono:filtro_valor ">{{ usuario.username }}</li>
+</ul>
+
 
 
