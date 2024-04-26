@@ -1,0 +1,22 @@
+
+// Estilo para el efecto spinner dándo vueltas
+:host::ng-deep .mat-spinner {
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+    top: 3px;
+}
+
+// Estilo para el texto "Cargando..."
+.estiloCargando {
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+    top: 3px;
+    color:blue;
+}
+
+// Si paso el ratón por el texto, cambiará de azul a rojo
+.estiloCargando:hover {
+    color:red;
+}

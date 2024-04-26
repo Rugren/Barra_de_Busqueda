@@ -1,67 +1,72 @@
-<h1>Búsqueda por Nombre:</h1>
-<app-search (search)="handleSearch($event)"></app-search>
+<ng-container *ngIf="usuarios.length > 0; else cargando">
+  <h1>Búsqueda por Nombre:</h1>
+  <app-search (search)="handleSearch($event)"></app-search>
 
-<!-- Cogidos de https://jsonplaceholder.typicode.com/users 
-Para importarlos hay que importar el HttpClientModule en el app.module.ts -->
-<h3>Nombres:</h3>
-<ul>
-  <li *ngFor="let usuario of usuarios | filter:filtro_valor ">{{ usuario.name }}</li>
-</ul>
+  <!-- Cogidos de https://jsonplaceholder.typicode.com/users 
+  Para importarlos hay que importar el HttpClientModule en el app.module.ts -->
+  <h3>Nombres:</h3>
+  <ul>
+    <li *ngFor="let usuario of usuarios | filter:filtro_valor ">{{ usuario.name }}</li>
+  </ul>
 
-<h3>Usuario:</h3>
-<ul>
-  <li *ngFor="let usuario of usuarios | filter:filtro_valor ">{{ usuario.username }}</li>
-</ul>
+  <h3>Usuario:</h3>
+  <ul>
+    <li *ngFor="let usuario of usuarios | filter:filtro_valor ">{{ usuario.username }}</li>
+  </ul>
 
-<h3>Teléfono:</h3>
-<ul>
-  <li *ngFor="let usuario of usuarios | filter:filtro_valor ">{{ usuario.phone }}</li>
-</ul> 
+  <h3>Teléfono:</h3>
+  <ul>
+    <li *ngFor="let usuario of usuarios | filter:filtro_valor ">{{ usuario.phone }}</li>
+  </ul>
 
   <br>
   <hr>
   <br>
 
-<h1>Búsqueda por Usuario:</h1>
-<app-search (search)="handleSearch($event)"></app-search> 
-<h3>Nombres:</h3>
-<ul>
-  <!-- <li *ngFor="let usuario of usuarios | filterUsuario:filtro_valor ">{{ usuario.name }}</li> 
+  <h1>Búsqueda por Usuario:</h1>
+  <app-search (search)="handleSearch($event)"></app-search>
+  <h3>Nombres:</h3>
+  <ul>
+    <!-- <li *ngFor="let usuario of usuarios | filterUsuario:filtro_valor ">{{ usuario.name }}</li> 
   CAMBIADO A "of username" y funciona también -->
-  <li *ngFor="let usuario of username | filterUsuario:filtro_valor ">{{ usuario.name }}</li>
-</ul>
+    <li *ngFor="let usuario of username | filterUsuario:filtro_valor ">{{ usuario.name }}</li>
+  </ul>
 
-<h3>Usuario:</h3>
-<ul>
-  <li *ngFor="let usuario of username | filterUsuario:filtro_valor ">{{ usuario.username }}</li>
-</ul>
+  <h3>Usuario:</h3>
+  <ul>
+    <li *ngFor="let usuario of username | filterUsuario:filtro_valor ">{{ usuario.username }}</li>
+  </ul>
 
-<h3>Teléfono:</h3>
-<ul>
-  <li *ngFor="let usuario of username | filterUsuario:filtro_valor ">{{ usuario.phone }}</li>
-</ul> 
+  <h3>Teléfono:</h3>
+  <ul>
+    <li *ngFor="let usuario of username | filterUsuario:filtro_valor ">{{ usuario.phone }}</li>
+  </ul>
 
   <br>
   <hr>
   <br>
 
-<h1>Búsqueda por Teléfono:</h1>
-<app-search (search)="handleSearch($event)"></app-search> 
+  <h1>Búsqueda por Teléfono:</h1>
+  <app-search (search)="handleSearch($event)"></app-search>
 
-<h3>Teléfono:</h3>
-<ul>
-  <li *ngFor="let usuario of phone | filterTelefono:filtro_valor ">{{ usuario.phone }}</li>
-</ul> 
+  <h3>Teléfono:</h3>
+  <ul>
+    <li *ngFor="let usuario of phone | filterTelefono:filtro_valor ">{{ usuario.phone }}</li>
+  </ul>
 
-<h3>Nombres:</h3>
-<ul>
-  <li *ngFor="let usuario of phone | filterTelefono:filtro_valor ">{{ usuario.name }}</li>
-</ul>
+  <h3>Nombres:</h3>
+  <ul>
+    <li *ngFor="let usuario of phone | filterTelefono:filtro_valor ">{{ usuario.name }}</li>
+  </ul>
 
-<h3>Usuario:</h3>
-<ul>
-  <li *ngFor="let usuario of phone | filterTelefono:filtro_valor ">{{ usuario.username }}</li>
-</ul>
+  <h3>Usuario:</h3>
+  <ul>
+    <li *ngFor="let usuario of phone | filterTelefono:filtro_valor ">{{ usuario.username }}</li>
+  </ul>
+</ng-container>
 
-
-
+<!-- El efecto de Cargando... -->
+<ng-template #cargando>
+  <mat-spinner color="primary" diameter="50"></mat-spinner>
+  <p class="estiloCargando">Cargando...</p>
+</ng-template>

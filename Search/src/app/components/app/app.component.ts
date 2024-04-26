@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { delay } from 'rxjs/operators';
 
 interface Usuario {
   id: number;
@@ -56,13 +57,20 @@ export class AppComponent implements OnInit {
   } */
 
   ngOnInit() {
-    this._http.get<Usuario[]>('https://jsonplaceholder.typicode.com/users').subscribe(
+    this._http.get<Usuario[]>('https://jsonplaceholder.typicode.com/users')
+    .pipe(
+      // Para que tarde en cargar 3 segundos y veamos el clásico mensaje de "CARGANDO..."
+      delay(3000)
+    )
+    .subscribe(
       (users: Usuario[]) => {
         this.usuarios = users;
         this.username = users; // No se necesitan dos arreglos separados, se puede usar usuarios para ambos propósitos de búsqueda
         this.phone = users;
         // this.email = users;
         // this.website = users;
+        
+
       }
     );
   }
