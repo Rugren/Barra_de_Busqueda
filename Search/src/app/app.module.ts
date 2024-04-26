@@ -19,6 +19,7 @@ import { HttpClientModule, HttpClient, provideHttpClient } from '@angular/common
 /* Angular Pipes */
 import { FilterPipe } from './pipes/filter.pipe';
 import { FilterUsuarioPipe } from './pipes/filter-usuario.pipe';
+import { FilterTelefonoPipe } from './pipes/filter-telefono.pipe';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FilterUsuarioPipe } from './pipes/filter-usuario.pipe';
     AppComponent,
     SearchComponent,
     FilterPipe,
-    FilterUsuarioPipe
+    FilterUsuarioPipe,
+    FilterTelefonoPipe
   ],
   imports: [
     BrowserModule,
