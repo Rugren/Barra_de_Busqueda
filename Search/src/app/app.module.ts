@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpClient, provideHttpClient } from '@angular/common/http';
+import { withFetch } from '@angular/common/http';
 
 /* Angular Pipes */
 import { FilterPipe } from './pipes/filter.pipe';
@@ -41,11 +42,13 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     FormsModule,
     HttpClientModule,
     // HttpClientFetchModule
+    // HttpClientModule.withFetch(),
     MatProgressSpinnerModule
   ],
   providers: [
     provideClientHydration(),
     provideAnimationsAsync(),
+    provideHttpClient(),
     // provideHttpClient({withFetch: true}) // Esto habilita fetch para HttpClient
     // provideHttpClient({}).withFetch() // Esto habilita fetch para HttpClient
   ],
